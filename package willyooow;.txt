@@ -1,0 +1,153 @@
+package willyooow;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.Color;
+import javax.swing.JTextPane;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Demo2 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Demo2 frame = new Demo2();
+					frame.setVisible(true);
+					frame.setTitle("PERSONAL PORTFOLIO");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	public void close() {
+		WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Demo2() {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 1650, 1080);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton lblNewLabel_4_4 = new JButton("Exit");
+		lblNewLabel_4_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				close();
+			}
+		});
+		lblNewLabel_4_4.setFocusable(false);
+		lblNewLabel_4_4.setBounds(1412, 41, 103, 24);
+		contentPane.add(lblNewLabel_4_4);
+		
+		JButton lblNewLabel_4_3_1 = new JButton("Home");
+		lblNewLabel_4_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				close();
+				Demo2 d2 = new Demo2();
+				d2.setVisible(true);
+			}
+		});
+		lblNewLabel_4_3_1.setFocusable(false);
+		lblNewLabel_4_3_1.setBounds(404, 41, 98, 24);
+		contentPane.add(lblNewLabel_4_3_1);
+		
+		JButton lblNewLabel_4_3 = new JButton("Educational Background");
+		lblNewLabel_4_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				close();
+				Educational ed = new Educational();
+				ed.setVisible(true);
+			}
+		});
+		lblNewLabel_4_3.setBounds(988, 41, 177, 24);
+		contentPane.add(lblNewLabel_4_3);
+		lblNewLabel_4_3.setFocusable(false);
+		
+		JButton lblNewLabel_4_1 = new JButton("Contacts");
+		lblNewLabel_4_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				close();
+				Contacts cn = new Contacts();
+				cn.setVisible(true);
+			}
+		});
+		lblNewLabel_4_1.setBounds(775, 41, 130, 24);
+		contentPane.add(lblNewLabel_4_1);
+		lblNewLabel_4_1.setFocusable(false);
+		
+		JButton lblNewLabel_4 = new JButton("Aboutme");
+		lblNewLabel_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				close();
+				AboutMe am = new AboutMe();
+				am.setVisible(true);
+			}
+		});
+		lblNewLabel_4.setBounds(575, 41, 130, 24);
+		contentPane.add(lblNewLabel_4);
+		lblNewLabel_4.setFocusable(false);
+		
+		JLabel lblNewLabel_3 = new JLabel("John Willy E De Leon");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 27));
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3.setBounds(51, 7, 305, 88);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_2_2 = new JLabel("Currently taking Bachelor of Science in Information Technology at National University");
+		lblNewLabel_2_2.setForeground(Color.black);
+		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.PLAIN, 23));
+		lblNewLabel_2_2.setBounds(672, 509, 983, 94);
+		contentPane.add(lblNewLabel_2_2);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("John Willy E De Leon");
+		lblNewLabel_2_1.setForeground(Color.black);
+		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.PLAIN, 60));
+		lblNewLabel_2_1.setBounds(672, 426, 674, 94);
+		contentPane.add(lblNewLabel_2_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Hello Everyone, I am");
+		lblNewLabel_2.setForeground(Color.black);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel_2.setBounds(672, 350, 383, 94);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Sofia Nicole Gabiano\\Desktop\\sheesh.jpg"));
+		lblNewLabel_1.setBounds(48, 195, 624, 710);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBackground(Color.black);
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Sofia Nicole Gabiano\\Desktop\\eyy.jpg"));;
+		lblNewLabel.setBounds(0, -39, 1798, 1085);
+		contentPane.add(lblNewLabel);
+	}
+}
